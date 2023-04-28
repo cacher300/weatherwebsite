@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #333;
+      }
+      form {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      label {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        width: 300px;
+        max-width: 80%;
+      }
+      button[type="submit"] {
+        padding: 10px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 300px;
+        max-width: 80%;
+      }
+      button[type="submit"]:hover {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <p><center>Please type "United States" instead of "USA"</center></p>
+    <center><p>Please turn off adblock to see the latest feautres</p></center>
+    <form method="post" action="/">
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+      <br>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <br>
+      <button type="submit">Get Weather Forecast</button>
+    </form>
+  </body>
+</html>

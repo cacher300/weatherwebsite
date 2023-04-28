@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <style>
+      /* CSS for the popup */
+      #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        z-index: 9999;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        display: none; /* initially hidden */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Popup HTML code -->
+    <div id="popup">
+      <h2>BUY MY WATCH PLEASE</h2>
+      <p>I GET MONEY IF YOU BUY</p>
+      <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <!-- Weather forecast section -->
+    <h1>Weather Forecast</h1>
+    <img src="{{ url_for('static', filename='temperature_forecast.png') }}" alt="Image description">
+
+    <!-- Top news headlines section -->
+    <div id="amzn-assoc-ad-0027ee76-5ec4-4b53-b281-ce0ed6cf9e2c"></div>
+    <div id="amzn-assoc-ad-2689e3cc-6455-4b0a-a34a-e390bce42684"></div>
+    <h1>Top News Headlines</h1>
+    <ol>
+      {% for headline in headlines %}
+        <li><a href="{{ headline[1] }}">{{ headline[0] }}</a></li>
+      {% endfor %}
+    </ol>
+    <script id="cid0020000342253763867" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">{"handle":"coolbotisthegoat","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100,"cnrs":"1","fwtickm":1}}</script>
+
+    <!-- JavaScript for the popup -->
+    <script>
+      // Show popup every 5 seconds
+      setInterval(showPopup, 5000);
+
+      // Function to show the popup
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      // Function to hide the popup
+      function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+    <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=0027ee76-5ec4-4b53-b281-ce0ed6cf9e2c"></script>
+    <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=2689e3cc-6455-4b0a-a34a-e390bce42684"></script>
+  </body>
+</html>
